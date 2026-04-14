@@ -112,7 +112,7 @@ const weatherParam = (parameter) => {
 }
 
 const findAirQuality = async (lat,lon) => {
-    const air_data = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+    const air_data = await axios.get(`https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
 
     air_pollutant.forEach((pollutant,idx) => {
         air_parameter[idx].innerText = air_data['data']['list'][0]['components'][pollutant];
